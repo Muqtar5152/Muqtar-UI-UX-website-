@@ -12,7 +12,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: process.env.NODE_ENV === 'production' ? '/portfolio-website/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/Muqtar-UI-UX-website-/' : '/',
   server: {
     port: 3000,
     open: true,
