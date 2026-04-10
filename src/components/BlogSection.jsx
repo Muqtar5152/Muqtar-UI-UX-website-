@@ -9,7 +9,7 @@ const BLOG_POSTS = [
     date: "2025",
     category: "UX Research",
     readTime: "6 min",
-    url: "https://medium.com/@muqtar/the-psychology-of-intuitive-design", // Placeholder URL
+    url: "https://medium.com/@muqtarpasha5152/the-psychology-of-intuitive-design-fffe9781ff56",
   },
   {
     num: "02",
@@ -18,7 +18,7 @@ const BLOG_POSTS = [
     date: "2025",
     category: "Design Systems",
     readTime: "8 min",
-    url: "https://medium.com/@muqtar/design-systems-that-scale", // Placeholder URL
+    url: "https://medium.com/@muqtarpasha5152/design-systems-that-scale-376331b3decc",
   },
   {
     num: "03",
