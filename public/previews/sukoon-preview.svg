@@ -1,0 +1,14 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#7C2D12"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1015" cy="115" r="175" fill="#FDBA74" fill-opacity="0.18"/>
+  <circle cx="165" cy="585" r="220" fill="#FB923C" fill-opacity="0.14"/>
+  <text x="80" y="310" fill="#FFF7ED" font-family="Georgia, serif" font-size="94" font-weight="700">Sukoon</text>
+  <text x="84" y="370" fill="#FFEDD5" font-family="monospace" font-size="28" letter-spacing="4">UX DESIGN  ·  WELLNESS</text>
+  <text x="84" y="430" fill="#FED7AA" font-family="monospace" font-size="22">Preview</text>
+</svg>
