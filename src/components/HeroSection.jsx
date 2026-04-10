@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowDownRight } from "lucide-react";
 
-const HERO_BG = "https://media.base44.com/images/public/69d210048f16a11240ab7c36/badbbaac9_generated_image.png";
+const HERO_BG = "";
 
 const CHAR_VARIANTS = {
   hidden: { y: "110%", opacity: 0 },
@@ -100,7 +100,7 @@ export default function HeroSection() {
             </span>
             <span className="block text-[clamp(56px,10vw,160px)] overflow-hidden">
               <SplitText
-                text="Over Complexity"
+                text="In Chaos"
                 className="italic text-accent"
                 startDelay={12}
               />

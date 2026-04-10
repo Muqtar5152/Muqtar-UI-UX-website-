@@ -9,6 +9,7 @@ const BLOG_POSTS = [
     date: "2025",
     category: "UX Research",
     readTime: "6 min",
+    url: "https://medium.com/@muqtar/the-psychology-of-intuitive-design", // Placeholder URL
   },
   {
     num: "02",
@@ -17,6 +18,7 @@ const BLOG_POSTS = [
     date: "2025",
     category: "Design Systems",
     readTime: "8 min",
+    url: "https://medium.com/@muqtar/design-systems-that-scale", // Placeholder URL
   },
   {
     num: "03",
@@ -25,6 +27,7 @@ const BLOG_POSTS = [
     date: "2024",
     category: "Career",
     readTime: "5 min",
+    url: "https://medium.com/@muqtar/from-architecture-to-digital", // Placeholder URL
   },
 ];
 
@@ -48,42 +51,65 @@ export default function BlogSection() {
 
       <div>
         {BLOG_POSTS.map((post, i) => (
-          <motion.article
-            key={post.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="group border-b border-border py-10 flex flex-col md:flex-row md:items-center gap-6 cursor-pointer relative overflow-hidden"
-          >
-            <motion.div
-              className="absolute inset-0 bg-card"
-              initial={{ scaleX: 0 }}
-              whileHover={{ scaleX: 1 }}
-              style={{ transformOrigin: "left" }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            />
+            <motion.article
+              key={post.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group border-b border-border py-10 flex flex-col md:flex-row md:items-center gap-6 relative overflow-hidden"
+            >
+              <motion.div
+                className="absolute inset-0 bg-card"
+                initial={{ scaleX: 0 }}
+                whileHover={{ scaleX: 1 }}
+                style={{ transformOrigin: "left" }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              />
 
-            <div className="relative flex flex-col md:flex-row md:items-center w-full gap-4 md:gap-0">
-              <span className="font-mono text-[9px] text-muted-foreground/40 md:w-12 shrink-0">{post.num}</span>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-accent md:w-36 shrink-0">{post.category}</span>
+              <div className="relative flex flex-col md:flex-row md:items-center w-full gap-4 md:gap-0">
+                <span className="font-mono text-[9px] text-muted-foreground/40 md:w-12 shrink-0">{post.num}</span>
+                <span className="font-mono text-[10px] uppercase tracking-widest text-accent md:w-36 shrink-0">{post.category}</span>
 
-              <div className="flex-1 md:px-6">
-                <h3 className="font-display text-xl md:text-2xl text-primary group-hover:text-accent transition-colors duration-300 mb-1">
-                  {post.title}
-                </h3>
-                <p className="font-mono text-xs text-muted-foreground leading-relaxed max-w-lg hidden md:block">
-                  {post.excerpt}
-                </p>
+                <div className="flex-1 md:px-6">
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <h3 className="font-display text-xl md:text-2xl text-primary group-hover:text-accent transition-colors duration-300 mb-1">
+                      {post.title}
+                    </h3>
+                  </a>
+                  <p className="font-mono text-xs text-muted-foreground leading-relaxed max-w-lg hidden md:block mb-2">
+                    {post.excerpt}
+                  </p>
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs text-accent hover:underline inline-flex items-center gap-1"
+                  >
+                    {post.url}
+                    <ArrowUpRight size={10} />
+                  </a>
+                </div>
+
+                <div className="flex items-center gap-6 shrink-0">
+                  <span className="font-mono text-[10px] text-muted-foreground">{post.readTime}</span>
+                  <span className="font-mono text-[10px] text-muted-foreground">{post.date}</span>
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground group-hover:text-accent transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transform"
+                  >
+                    <ArrowUpRight size={14} />
+                  </a>
+                </div>
               </div>
-
-              <div className="flex items-center gap-6 shrink-0">
-                <span className="font-mono text-[10px] text-muted-foreground">{post.readTime}</span>
-                <span className="font-mono text-[10px] text-muted-foreground">{post.date}</span>
-                <ArrowUpRight size={14} className="text-muted-foreground group-hover:text-accent transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transform" />
-              </div>
-            </div>
-          </motion.article>
+            </motion.article>
         ))}
       </div>
     </section>

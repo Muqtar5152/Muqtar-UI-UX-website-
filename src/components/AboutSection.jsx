@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const ABOUT_IMG = "https://media.base44.com/images/public/69d210048f16a11240ab7c36/c16002a13_generated_fa9148dc.png";
+const ABOUT_IMG = "";
 
 const SKILLS = [
   "UX Design", "UI Design", "Product Design", "Consulting",

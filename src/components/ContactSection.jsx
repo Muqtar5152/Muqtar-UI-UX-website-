@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, CheckCircle, Loader2 } from "lucide-react";
-import { base44 } from "@/api/base44Client";
 
 const SERVICES = [
   "UX/UI Design", "Product Design", "Design Systems",
@@ -27,26 +26,45 @@ export default function ContactSection() {
   const [form, setForm] = useState({ name: "", email: "", service: "", company: "", challenge: "" });
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(null);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.service || !form.challenge) return;
     setSending(true);
-    await base44.entities.ContactInquiry.create({ ...form, status: "new" });
-    await base44.integrations.Core.SendEmail({
-      to: form.email,
-      subject: "Thanks for reaching out — Muqtar",
-      body: `Hi ${form.name},\n\nThank you for your inquiry about ${form.service}. I've received your message and will get back to you within 24 hours.\n\nBest regards,\nMuqtar`,
-    });
-    await base44.integrations.Core.SendEmail({
-      to: "muqtarpasha5152@gmail.com",
-      subject: `New inquiry: ${form.service} from ${form.name}`,
-      body: `New contact form submission:\n\nName: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company || "N/A"}\nService: ${form.service}\nChallenge: ${form.challenge}`,
-    });
-    setSending(false);
-    setSent(true);
-    setForm({ name: "", email: "", service: "", company: "", challenge: "" });
+    setError(null);
+
+    try {
+      // Using Formspree for form submission
+      const response = await fetch('https://formspree.io/f/xpznqgyq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          service: form.service,
+          company: form.company,
+          challenge: form.challenge,
+          _subject: `New Project Inquiry from ${form.name}`,
+          _replyto: form.email,
+        }),
+      });
+
+      if (response.ok) {
+        setSent(true);
+        setForm({ name: "", email: "", service: "", company: "", challenge: "" });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
+      setError("Failed to send message. Please try again or contact me directly at muqtarpasha5152@gmail.com");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -223,6 +241,9 @@ export default function ContactSection() {
                   </>
                 )}
               </button>
+              {error && (
+                <p className="font-mono text-sm text-red-500 mt-4">{error}</p>
+              )}
             </form>
           )}
         </motion.div>

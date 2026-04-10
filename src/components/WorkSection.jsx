@@ -7,8 +7,9 @@ const PROJECTS = [
     title: "Plan It",
     category: "UX Design · Mobile App",
     year: "2025",
+    url: "https://muqtar5152.github.io/PlanIt-Case-Study/",
     description: "A smart daily planner for focused living — helping users organize tasks, track habits, and stay motivated.",
-    image: "https://media.base44.com/images/public/69d210048f16a11240ab7c36/a45493323_generated_3e28f8e7.png",
+    image: "",
     stats: [{ value: "12%", label: "Conversion" }, { value: "4.8★", label: "Satisfaction" }],
     roles: ["UX Design", "UI Design", "Strategy"],
   },
@@ -17,8 +18,9 @@ const PROJECTS = [
     title: "Wander AI",
     category: "Product Design · AI",
     year: "2025",
+    url: "https://muqtar5152.github.io/Wanderly-Case-Study/",
     description: "Reimagining travel planning with AI-driven personalization and curated recommendations.",
-    image: "https://media.base44.com/images/public/69d210048f16a11240ab7c36/e8c032703_generated_6dacfee5.png",
+    image: "",
     stats: [{ value: "12m", label: "Avg Engagement" }, { value: "4.5★", label: "Satisfaction" }],
     roles: ["Product Design", "UX Research", "Interaction"],
   },
@@ -27,18 +29,34 @@ const PROJECTS = [
     title: "Sukoon",
     category: "UX Design · Wellness",
     year: "2024",
+    url: "https://muqtar5152.github.io/Sukoon-Case-Study/",
     description: "An Islamic mindfulness & habit tracker blending tradition with modern design for spiritual well-being.",
-    image: "https://media.base44.com/images/public/69d210048f16a11240ab7c36/36159fc5b_generated_b8a6704c.png",
+    image: "",
     stats: [{ value: "85%", label: "Usability" }, { value: "70%", label: "Retention" }],
     roles: ["UX Design", "Design System", "Consulting"],
   },
 ];
 
 function ProjectRow({ project, onHover, onLeave, isHovered, anyHovered }) {
+  const handleOpenLink = () => {
+    if (project.url) {
+      window.location.href = project.url;
+    }
+  };
+
   return (
     <motion.div
       onMouseEnter={() => onHover(project)}
       onMouseLeave={onLeave}
+      onClick={handleOpenLink}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleOpenLink();
+        }
+      }}
+      role="link"
+      tabIndex={0}
       className={`group relative border-b border-border py-8 md:py-10 cursor-pointer transition-all duration-500 ${
         anyHovered && !isHovered ? "opacity-30" : "opacity-100"
       }`}
