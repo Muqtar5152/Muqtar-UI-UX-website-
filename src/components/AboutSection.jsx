@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const ABOUT_IMG = "";
+const ABOUT_IMG = `${import.meta.env.BASE_URL}about/architectural-detail.svg`;
 
 const SKILLS = [
   "UX Design", "UI Design", "Product Design", "Consulting",
