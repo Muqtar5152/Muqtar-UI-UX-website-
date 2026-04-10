@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
+const PREVIEW_BASE = `${import.meta.env.BASE_URL}previews/`;
+
 const PROJECTS = [
   {
     index: "01",
@@ -9,7 +11,7 @@ const PROJECTS = [
     year: "2025",
     url: "https://muqtar5152.github.io/PlanIt-Case-Study/",
     description: "A smart daily planner for focused living — helping users organize tasks, track habits, and stay motivated.",
-    image: "/previews/plan-it-preview.svg",
+    image: `${PREVIEW_BASE}plan-it-preview.svg`,
     stats: [{ value: "12%", label: "Conversion" }, { value: "4.8★", label: "Satisfaction" }],
     roles: ["UX Design", "UI Design", "Strategy"],
   },
@@ -20,7 +22,7 @@ const PROJECTS = [
     year: "2025",
     url: "https://muqtar5152.github.io/Wanderly-Case-Study/",
     description: "Reimagining travel planning with AI-driven personalization and curated recommendations.",
-    image: "/previews/wander-ai-preview.svg",
+    image: `${PREVIEW_BASE}wander-ai-preview.svg`,
     stats: [{ value: "12m", label: "Avg Engagement" }, { value: "4.5★", label: "Satisfaction" }],
     roles: ["Product Design", "UX Research", "Interaction"],
   },
@@ -31,7 +33,7 @@ const PROJECTS = [
     year: "2024",
     url: "https://muqtar5152.github.io/Sukoon-Case-Study/",
     description: "An Islamic mindfulness & habit tracker blending tradition with modern design for spiritual well-being.",
-    image: "/previews/sukoon-preview.svg",
+    image: `${PREVIEW_BASE}sukoon-preview.svg`,
     stats: [{ value: "85%", label: "Usability" }, { value: "70%", label: "Retention" }],
     roles: ["UX Design", "Design System", "Consulting"],
   },
