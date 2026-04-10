@@ -50,6 +50,9 @@ function ProjectRow({ project, onHover, onLeave, isHovered, anyHovered }) {
     <motion.div
       onMouseEnter={() => onHover(project)}
       onMouseLeave={onLeave}
+      onFocus={() => onHover(project)}
+      onBlur={onLeave}
+      onTouchStart={() => onHover(project)}
       onClick={handleOpenLink}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
@@ -104,6 +107,16 @@ function ProjectRow({ project, onHover, onLeave, isHovered, anyHovered }) {
       <div className="md:hidden mt-3 flex items-center gap-6">
         <span className="font-mono text-[11px] text-muted-foreground">{project.category}</span>
         <span className="font-mono text-[11px] text-muted-foreground">{project.year}</span>
+      </div>
+
+      {/* Mobile preview image */}
+      <div className="md:hidden mt-4 aspect-video overflow-hidden border border-border bg-card">
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
       </div>
     </motion.div>
   );
