@@ -27,7 +27,7 @@ const BLOG_POSTS = [
     date: "2024",
     category: "Career",
     readTime: "5 min",
-    url: "https://medium.com/@muqtar/from-architecture-to-digital", // Placeholder URL
+    url: "https://medium.com/@muqtarpasha5152/from-architecture-to-digital-9d7a69abd680",
   },
 ];
 

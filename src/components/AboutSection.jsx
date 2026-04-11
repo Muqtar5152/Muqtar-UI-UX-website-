@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const ABOUT_IMG = `${import.meta.env.BASE_URL}about/architectural-detail.svg`;
+const ABOUT_IMG = `${import.meta.env.BASE_URL}about/architectural-detail.jpg`;
+const ABOUT_IMG_FALLBACK = `${import.meta.env.BASE_URL}about/architectural-detail.svg`;
 
 const SKILLS = [
   "UX Design", "UI Design", "Product Design", "Consulting",
@@ -52,6 +53,11 @@ export default function AboutSection() {
               alt="Architectural detail"
               className="w-full h-[115%] object-cover absolute top-0"
               style={{ y: imgY }}
+              onError={(e) => {
+                if (e.currentTarget.src.endsWith("architectural-detail.jpg")) {
+                  e.currentTarget.src = ABOUT_IMG_FALLBACK;
+                }
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
           </div>
