@@ -116,8 +116,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="font-mono text-sm md:text-base text-muted-foreground leading-[1.8] max-w-sm"
           >
-            I'm a UI/UX Designer with a background in architecture,
-            crafting user-focused products that are simple, functional, and impactful.
+           UI/UX Designer bringing clarity to complex products through structured, intuitive design.
           </motion.p>
 
           <motion.div

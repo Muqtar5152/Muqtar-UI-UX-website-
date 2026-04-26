@@ -86,17 +86,17 @@ export default function AboutSection() {
             <div className="flex whitespace-nowrap animate-marquee" style={{ width: "fit-content" }}>
               {[1,2,3,4].map(i => (
                 <span key={i} className="font-display text-3xl md:text-4xl italic text-muted-foreground/15 mr-10">
-                  Architect-turned Designer — Spatial Thinking + Digital Craft — User-Centered Always —
+                  Designing Clarity in Complex Digital Products........
                 </span>
               ))}
             </div>
           </div>
 
           <p className="font-mono text-sm md:text-base text-muted-foreground leading-[1.9] mb-6">
-            I'm Muqtar — an architect-turned UX/UI designer who brings spatial awareness,
-            user-centered thinking, and clean aesthetics to every digital product I shape.
-            My architecture background gives me a unique lens for creating interfaces that feel
-            as intentional and purposeful as a well-designed building.
+            I’m Muqtar — a UI/UX Designer working across product thinking and interface design. 
+            My focus is on simplifying complex systems into experiences that feel natural to use, 
+            with careful attention to flow, hierarchy, and detail.From early concepts to final UI, 
+            the work is guided by clarity, usability, and a quiet sense of precision.
           </p>
           <p className="font-mono text-sm md:text-base text-muted-foreground leading-[1.9] mb-14">
             I specialize in transforming complex problems into simple, elegant solutions — from

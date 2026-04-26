@@ -52,7 +52,7 @@ export default function ContactSection() {
           _replyto: form.email,
         }),
       });
-
+      
       if (response.ok) {
         setSent(true);
         setForm({ name: "", email: "", service: "", company: "", challenge: "" });
