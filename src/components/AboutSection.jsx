@@ -86,7 +86,7 @@ export default function AboutSection() {
             <div className="flex whitespace-nowrap animate-marquee" style={{ width: "fit-content" }}>
               {[1,2,3,4].map(i => (
                 <span key={i} className="font-display text-3xl md:text-4xl italic text-muted-foreground/15 mr-10">
-                  Designing Clarity in Complex Digital Products........
+                  Designing Clarity in Complex Digital Products........ 
                 </span>
               ))}
             </div>
